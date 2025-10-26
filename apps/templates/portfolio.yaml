@@ -14,3 +14,9 @@ spec:
     path: deployment
     repoURL: https://github.com/ZakDaMack/portfolio
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
