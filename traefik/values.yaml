@@ -1,7 +1,7 @@
 ingressRoute:
   dashboard:
     enabled: true
-    matchRule: Host(`dashboard.k8s.zakhaven.uk`)
+    matchRule: Host(`traefik.k8s.zakhaven.uk`)
     entryPoints:
       - websecure
 
@@ -22,3 +22,6 @@ gateway:
     web:
       namespacePolicy:
         from: All
+
+namespace:
+  name: ingress

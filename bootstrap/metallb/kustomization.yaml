@@ -3,10 +3,6 @@ kind: Kustomization
 
 resources:
   - https://raw.githubusercontent.com/metallb/metallb/v0.14.9/config/manifests/metallb-native.yaml
-  - https://raw.githubusercontent.com/ZakDaMack/homelab/refs/heads/main/installation/00-metallb-config.yaml
-
-## changes to config maps
-patches:
-  - path: argocd-cmd-params-cm-patch.yaml
+  - ./00-metallb-config.yaml
 
 namespace: metallb-system
