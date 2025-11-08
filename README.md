@@ -29,6 +29,7 @@ blah blah blah
 1. `kustomize build https://raw.githubusercontent.com/ZakDaMack/homelab/refs/heads/main/argocd/installation | kubectl apply -f -`
 2. `kubectl config set-context --current --namespace=argocd`
 3. `argocd app create apps --repo https://github.com/ZakDaMack/homelab.git --path apps --dest-server https://kubernetes.default.svc --dest-namespace default`
+4. `argocd app sync -l app.kubernetes.io/instance=app`
 
 ## TODO
 
