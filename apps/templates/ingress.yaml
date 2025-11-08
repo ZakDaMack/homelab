@@ -11,17 +11,9 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   sources:
-    - repoURL: 'https://helm.traefik.io/traefik'
-      targetRevision: 37.2.0
-      chart: traefik
-      helm:
-        releaseName: traefik
-        valueFiles:
-          - $values/values.yaml
-    - repoURL: 'https://github.com/ZakDaMack/homelab'
+    - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
       path: traefik
-      ref: values
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
       path: ingress

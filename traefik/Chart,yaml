@@ -1,0 +1,10 @@
+apiVersion: v2
+name: traefik
+description: Traefik ingress controller with custom configuration
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: traefik
+    version: "37.2.0"
+    repository: "https://helm.traefik.io/traefik"
