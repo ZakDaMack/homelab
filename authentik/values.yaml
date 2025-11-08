@@ -10,7 +10,8 @@ server:
     ingressClassName: traefik
     enabled: true
     hosts:
-      - authentik.zakhaven.uk
+      - authentik.k8s.zakhaven.uk
+      
 postgresql:
   enabled: true
   auth:
