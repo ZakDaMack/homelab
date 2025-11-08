@@ -1,0 +1,10 @@
+apiVersion: v2
+name: authentik
+description: Authentik identity provider to protect incoming traffic
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: authentik
+    version: "37.2.0"
+    repository: "https://charts.goauthentik.io/authentik"
