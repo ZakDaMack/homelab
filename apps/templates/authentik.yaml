@@ -15,6 +15,7 @@ spec:
       targetRevision: HEAD
       path: authentik
       helm:
+        releaseName: authentik
         dependencyUpdate:
           enabled: true
         valueFiles:
