@@ -1,9 +1,9 @@
 authentik:
-    secret_key: "TT5IK6FuTaaQG2kwxi6s1zi+uX3+UtfOVntPMrCFz1j/kJaVfmYT8xF2t9O38gURrshQjQSQ6XxvVko1"
-    error_reporting:
-        enabled: true
-    postgresql:
-        password: "mQJqQqq55VIHvtYuZ8EPI7JFKlBYchEodQ3aL7uaQX48lzRgXrpPj5zkn1ItdxRXD8orv2AZ2D48WmI8"
+  secret_key: "TT5IK6FuTaaQG2kwxi6s1zi+uX3+UtfOVntPMrCFz1j/kJaVfmYT8xF2t9O38gURrshQjQSQ6XxvVko1"
+  error_reporting:
+    enabled: true
+  postgresql:
+    password: "mQJqQqq55VIHvtYuZ8EPI7JFKlBYchEodQ3aL7uaQX48lzRgXrpPj5zkn1ItdxRXD8orv2AZ2D48WmI8"
 
 server:
   ingress:
