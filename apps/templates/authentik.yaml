@@ -11,15 +11,16 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   sources:
-    - repoURL: https://github.com/ZakDaMack/homelab
-      targetRevision: HEAD
-      path: authentik
+    - repoURL: 'https://charts.goauthentik.io'
+      version: '2025.10.1'
+      chart: authentik
       helm:
         releaseName: authentik
-        dependencyUpdate:
-          enabled: true
         valueFiles:
-          - values.yaml
+          - $values/authentik/values.yaml
+    - repoURL: https://github.com/ZakDaMack/homelab
+      targetRevision: HEAD
+      ref: values
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
