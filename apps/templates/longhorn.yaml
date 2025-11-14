@@ -19,7 +19,7 @@ spec:
         values: |
           preUpgradeChecker:
             jobEnabled: false
-          defaulySettings:
+          defaultSettings:
             defaultDataPath: '/var/mnt/temp'
     
     - repoURL: https://github.com/ZakDaMack/homelab
