@@ -7,13 +7,15 @@ blah blah blah
 - Traefik
 - ArgoCD
 - Portfolio
+- Longhorn (WIP)
+- Authentik (WIP)
 - Dashboard (WIP)
 
 ## Installation
 
 ### Prereqs
 
-- Talosctl
+- Talosctl (iSCSI, Linux-util)
 - Kubectl
 - Kustomize
 - ArgoCD
@@ -34,11 +36,11 @@ argocd app sync -l app.kubernetes.io/instance=apps
 
 ## TODO
 
+- Storage (Longhorn)
+- Auth (Authelia/Authentik?)
 - Dashboard
 - Metrics (node exporter, logging, prometheus, grafana, loki)
-- Auth (Authelia/Authentik?)
 - Firewall (Cilium?)
-- Storage (Longhorn)
 - SecretsManager (how to store?)
 - Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline)
 - Databases?

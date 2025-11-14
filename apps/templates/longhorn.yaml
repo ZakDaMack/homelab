@@ -19,6 +19,13 @@ spec:
         values: |
           preUpgradeChecker:
             jobEnabled: false
+          defaulySettings:
+            defaultDataPath: '/var/mnt/temp'
+    
+    - repoURL: https://github.com/ZakDaMack/homelab
+      targetRevision: HEAD
+      path: longhorn
+          
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
