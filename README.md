@@ -7,8 +7,8 @@ blah blah blah
 - Traefik
 - ArgoCD
 - Portfolio
-- Longhorn (WIP)
-- Authentik (WIP)
+- Longhorn
+- Authentik
 - Dashboard (WIP)
 
 ## Installation
@@ -27,7 +27,7 @@ Clone the Git repo and run bootstrap to install the base packages before enablin
 ```bash
 git clone https://github.com/ZakDaMack/homelab.git
 cd homelab/
-kustomize build bootstrap | kubectl apply -f -
+kustomize build 00-bootstrap | kubectl apply -f -
 argocd login <ARGOCD_SERVER>
 argocd app create apps --repo https://github.com/ZakDaMack/homelab.git --path apps --dest-server https://kubernetes.default.svc --dest-namespace argocd --sync-policy auto
 argocd app sync apps
@@ -36,8 +36,6 @@ argocd app sync -l app.kubernetes.io/instance=apps
 
 ## TODO
 
-- Storage (Longhorn)
-- Auth (Authelia/Authentik?)
 - Dashboard
 - Metrics (node exporter, logging, prometheus, grafana, loki)
 - Firewall (Cilium?)

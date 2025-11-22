@@ -1,9 +1,0 @@
-apiVersion: v1alpha1
-kind: UserVolumeConfig
-name: temp
-provisioning:
-  diskSelector:
-    match: disk.dev_path == "/dev/sdb"
-  maxSize: 64GB
-filesystem:
-  type: xfs
