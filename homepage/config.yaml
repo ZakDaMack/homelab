@@ -1,0 +1,309 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  namespace: default
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  kubernetes.yaml: |
+    mode: cluster
+
+  services.yaml: |
+    - Media:
+      - Jellystack:
+        - Jellyfin:
+            icon: jellyfin.png
+            href: https://jellyfin.internal.zakhaven.uk
+            siteMonitor: https://jellyfin.internal.zakhaven.uk
+            container: jellyfin
+            widget:
+              type: jellyfin
+              url: https://jellyfin.internal.zakhaven.uk
+              key: ""
+
+        - Jellyseer:
+            icon: jellyseerr.png
+            href: https://jellyseer.zakhaven.uk
+            siteMonitor: https://jellyseer.zakhaven.uk
+            container: jellyseerr
+            widget:
+              type: jellyseerr
+              url: https://jellyseer.zakhaven.uk
+              key: ""
+
+      - Other:
+        - Sonarr:
+            icon: sonarr.png
+            href: https://sonarr.internal.zakhaven.uk
+            siteMonitor: https://sonarr.internal.zakhaven.uk
+            container: sonarr
+            widget:
+              type: sonarr
+              url: https://sonarr.internal.zakhaven.uk
+              key: ""
+
+        - Radarr:
+            icon: radarr.png
+            href: https://radarr.internal.zakhaven.uk
+            siteMonitor: https://radarr.internal.zakhaven.uk
+            container: radarr
+            widget:
+              type: radarr
+              url: https://radarr.internal.zakhaven.uk
+              key: ""
+
+        - qBittorrent:
+            icon: qbittorrent.png
+            href: https://qbittorrent.internal.zakhaven.uk
+            siteMonitor: https://qbittorrent.internal.zakhaven.uk
+            container: qbittorrent
+            widget:
+              type: qbittorrent
+              url: https://qbittorrent.internal.zakhaven.uk
+              username: admin
+              password: ""
+
+        - Jackett:
+            icon: jackett.png
+            href: https://jackett.internal.zakhaven.uk
+            siteMonitor: https://jackett.internal.zakhaven.uk
+            container: jackett
+            widget:
+              type: jackett
+              url: https://jackett.internal.zakhaven.uk
+              password: ""
+
+
+    - Services:
+      - Dockge:
+          icon: dockge.png
+          href: https://dockge.internal.zakhaven.uk
+          siteMonitor: https://dockge.internal.zakhaven.uk
+          container: dockge-dockge-1
+
+      - "Uptime Kuma":
+          icon: uptime-kuma.png
+          href: https://status.internal.zakhaven.uk
+          siteMonitor: https://status.internal.zakhaven.uk
+          container: essentials-uptimekuma-1
+          widget:
+            type: uptimekuma
+            url: https://status.internal.zakhaven.uk/status/internal
+
+      - "Vault Warden":
+          icon: bitwarden.png
+          href: https://vault.zakhaven.uk
+          siteMonitor: https://vault.zakhaven.uk
+          container: essentials-vaultwarden-1
+
+      - Crowdsec:
+          icon: crowdsec.png
+          href: https://app.crowdsec.net
+          siteMonitor: https://app.crowdsec.net
+          container: crowdsec
+          widget:
+            type: crowdsec
+            url: http://crowdsec:8080
+            username: localhost # machine_id in crowdsec
+            password: ""
+
+      - Traefik:
+          icon: traefik.png
+          href: https://dashbaord.internal.zakhaven.uk
+          siteMonitor: https://dashbaord.internal.zakhaven.uk
+          container: traefik
+          widget:
+            type: traefik
+            url: http://traefik:8080
+            username: username # optional
+            password: password # optional
+
+      - Minecraft:
+          icon: minecraft.png
+          container: minceraft-minecraft-1
+          widget:
+            type: minecraft
+            url: udp://minecraftserveripordomain:port
+
+      - "Home Assistant":
+          icon: home-assistant.png
+          href: https://hass.zakhaven.uk
+          siteMonitor: https://hass.zakhaven.uk
+          widget:
+            type: homeassistant
+            url: http://homeassistant.host.or.ip:port
+            key: access_token
+
+      - Unifi:
+          icon: unifi.png
+          url: https://10.10.2.1/
+          siteMonitor: https://10.10.2.1/
+          widget:
+            type: unifi
+            url: https://unifi.host.or.ip:port
+            username: user
+            password: pass
+
+      - Outline:
+          icon: outline.png
+          url: https://outline.zakhaven.uk
+          siteMonitor: https://outline.zakhaven.uk
+          container: outline-outline-1
+
+      - Proxmox:
+          icon: proxmox.png
+          url: https://10.10.2.10:8006
+          siteMonitor: https://10.10.2.10:8006
+          widget:
+            type: proxmox
+            url: https://10.10.2.10:8006
+          # username: api_token_id
+          # password: api_token_secret
+          # node: pve-1 # optional
+
+      - Cloudflare:
+          icon: cloudflare.png
+          url: https://dash.cloudflare.com
+          siteMonitor: https://dash.cloudflare.com
+          container: essentials-cloudflare-ddns-zakhaven-1
+
+      - "Better Stack":
+          icon: better-stack.png
+          url: https://betterstack.com/users/sign-in
+          siteMonitor: https://betterstack.com/users/sign-in
+
+      - Windmill:
+          icon: windmill.png
+          url: https://windmill.zakhaven.uk
+          siteMonitor: https://windmill.zakhaven.uk
+          container: windmill-windmill-1
+
+      - Synology:
+          icon: synology.png
+          url: https://mediastorage.zakhaven.uk
+          siteMonitor: https://mediastorage.zakhaven.uk
+          widget:
+            type: diskstation
+            url: https://mediastorage.zakhaven.uk
+            username: username
+            password: password
+            #  volume: volume_N # optional
+
+  custom.css: ""
+  custom.js: ""
+
+  bookmarks.yaml: |
+    - Bookmarks:
+      - GitHub:
+        - icon: github.png
+          href: https://github.com/
+      - Docker:
+        - icon: docker.png
+          href: https://hub.docker.com/
+      - Excalidraw:
+        - icon: excalidraw.png
+          href: https://excalidraw.png/
+      - Outlook:
+        - icon: microsoft-outlook.png
+          href: https://outlook.live.com/
+      - Proton:
+        - icon: proton-mail.png
+          href: https://account.proton.me/
+      - Google:
+        - icon: google.png
+          href: https://google.com/
+      - YouTube:
+        - icon: youtube.png
+          href: https://youtube.com/
+      - Twitch:
+        - icon: twitch.png
+          href: https://twitch.tv/
+      - Facebook:
+        - icon: facebook.png
+          href: https://facebook.com/
+      - Reddit:
+        - icon: reddit.png
+          href: https://reddit.com/
+      - Discord:
+        - icon: discord.png
+          href: https://discord.com/app/
+      - X:
+        - icon: x.png
+          href: https://x.com/
+
+  settings.yaml: |
+    title: Zakhaven
+    description: Hello, world!
+
+    background:
+      image: /images/background.jpg
+      blur: xs
+      saturate: 50
+      brightness: 50
+      opacity: 70
+
+    headerStyle: clean
+    showStats: true
+    cardBlur: sm
+    theme: dark
+    color: slate
+
+    providers:
+      openweathermap: ""
+      weatherapi: weatherapiapikey
+
+    layout:
+      Bookmarks:
+        iconsOnly: true
+        header: false
+        style: row
+      Media:
+        Jellystack:
+          header: false
+          style: row
+          columns: 2
+        Other:
+          header: false
+          style: row
+          columns: 4
+      Services:
+        style: row
+
+  widgets.yaml: |
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "cluster"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+
+    - unifi_console:
+        url: https://10.10.2.1/
+        username: api
+        password: ""
+
+    - datetime:
+        text_size: xl
+        locale: gb
+        format:
+          timeStyle: short
+          hourCycle: h23
+          dateStyle: short
+
+    - openweathermap:
+        latitude: 51.802187
+        longitude: -0.070969
+        label: Hertford
+        units: metric
+        provider: openweathermap
+        format:
+          maximumFractionDigits: 0
+
+  docker.yaml: ""

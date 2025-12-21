@@ -39,6 +39,6 @@ argocd app sync -l app.kubernetes.io/instance=apps
 - Dashboard
 - Metrics (node exporter, logging, prometheus, grafana, loki)
 - Firewall (Cilium?)
-- SecretsManager (how to store?)
+- SecretsManager (how to store?) (infisical, vault)
 - Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline)
 - Databases?
