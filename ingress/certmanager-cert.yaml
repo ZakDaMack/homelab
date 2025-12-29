@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: whoami
+  namespace: ingress
+
+spec:
+  secretName: zakhaven-tls 
+  dnsNames:
+    - "*.k8s.zakhaven.uk"
+  issuerRef:
+    name: acme
+    kind: Issuer

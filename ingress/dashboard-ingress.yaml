@@ -15,3 +15,5 @@ spec:
       middlewares:
         - name: authentik
           namespace: ingress
+  tls:
+    secretName: zakhaven-tls
