@@ -31,12 +31,12 @@ spec:
       targetRevision: HEAD
       path: ingress
       
-    - repoURL: https://github.com/ZakDaMack/homelab
-      targetRevision: HEAD
-      path: crowdsec
-      helm:
-        valueFiles:
-          - values.yaml
+    # - repoURL: https://github.com/ZakDaMack/homelab
+    #   targetRevision: HEAD
+    #   path: crowdsec
+    #   helm:
+    #     valueFiles:
+    #       - values.yaml
 
 
   syncPolicy:
