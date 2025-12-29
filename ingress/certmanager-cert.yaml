@@ -7,7 +7,7 @@ spec:
   secretName: zakhaven-tls 
   issuerRef:
     name: acme
-    kind: ClusterIssuer
+    kind: Issuer
   dnsNames:
     - "k8s.zakhaven.uk"
     - "*.k8s.zakhaven.uk"
