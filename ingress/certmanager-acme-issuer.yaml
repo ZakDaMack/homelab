@@ -1,5 +1,5 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: acme
 
@@ -13,5 +13,5 @@ spec:
       - dns01:
           cloudflare:
             apiTokenSecretRef:
-              name: cloudflare-api-token
-              key: api-token
+              name: cloudflare-api-key-secret
+              key: api-key

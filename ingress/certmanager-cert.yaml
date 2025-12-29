@@ -1,13 +1,20 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: whoami
+  name: acme
   namespace: ingress
-
 spec:
   secretName: zakhaven-tls 
-  dnsNames:
-    - "*.k8s.zakhaven.uk"
   issuerRef:
     name: acme
-    kind: Issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - "k8s.zakhaven.uk"
+    - "*.k8s.zakhaven.uk"
+  secretTemplate:
+    annotations:
+      # Instruct Reflector to automatically sync this secret to other namespaces
+      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "*"
+      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
+      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "*"
