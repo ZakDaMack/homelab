@@ -9,6 +9,7 @@ spec:
     name: acme
     kind: Issuer
   dnsNames:
+    - "zakhaven.uk"
     - "k8s.zakhaven.uk"
     - "*.k8s.zakhaven.uk"
   secretTemplate:
