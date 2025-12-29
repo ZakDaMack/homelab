@@ -18,6 +18,15 @@ spec:
         valueFiles:
           - values.yaml
 
+    - repoURL: 'oci://quay.io/jetstack/charts/cert-manager'
+      targetRevision: 'v1.19.2'
+      chart: cert-manager
+      helm:
+        releaseName: cert-manager
+        values: |
+          crds:
+            enabled: true
+
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
       path: ingress
@@ -29,11 +38,6 @@ spec:
         valueFiles:
           - values.yaml
 
-    - repoURL: 'oci://quay.io/jetstack/charts/cert-manager'
-      targetRevision: 'v1.19.2'
-      chart: cert-manager
-      helm:
-        releaseName: cert-manager
 
   syncPolicy:
     syncOptions:
