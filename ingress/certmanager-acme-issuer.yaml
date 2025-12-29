@@ -5,12 +5,13 @@ metadata:
 
 spec:
   acme:
-    # Production server is on https://acme-v02.api.letsencrypt.org/directory
-    # Use staging by default.
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: z.dowsett@outlook.com
     privateKeySecretRef:
       name: acme
     solvers:
-      - http01:
-          ingress:
-            ingressClassName: traefik
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: api-token

@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: argocd-oidc
-  namespace: argocd
-stringData:
-  dex.authentik.clientSecret: cjZGMVFJT2luSzlmSTB4VUFPd01rTkM0bHNpQThTbjYzeVI4cktVU1JUZkxqUjFhTGo2MzA2d1hoaDI1Uk5YNHRHNDFqa0QyUTZqT3hzMk4wWVVzd1ZleUdUSkRoZlVvazV0ekdPMHJwMUJxRzJ1aG56U0ZpYThGQ25JMHZLdWU=

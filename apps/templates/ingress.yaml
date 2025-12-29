@@ -27,6 +27,12 @@ spec:
           crds:
             enabled: true
 
+    - repoURL: 'oci://ghcr.io/emberstack/helm-charts/reflector'
+      targetRevision: '9.1.45'
+      chart: reflector
+      helm:
+        releaseName: reflector
+
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
       path: ingress
