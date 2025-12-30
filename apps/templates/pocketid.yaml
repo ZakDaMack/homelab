@@ -27,9 +27,9 @@ spec:
             periodSeconds: 60
           config:
             publicAppUrl: https://pocketid.k8s.zakhaven.uk
-            trustProxy: true
+            trustProxy: "true"
           ingress:
-            enabled: true
+            enabled: "true"
             hosts:
               - host: pocketid.k8s.zakhaven.uk
                 paths:
