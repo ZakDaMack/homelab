@@ -19,7 +19,6 @@ providers:
 
 rbac:
   enabled: true
-  scope: Cluster
 
 gateway:
   listeners:
