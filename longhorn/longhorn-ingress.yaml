@@ -14,4 +14,3 @@ spec:
           port: 80
       middlewares:
         - name: authentik
-          namespace: ingress
