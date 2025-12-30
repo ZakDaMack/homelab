@@ -25,3 +25,11 @@ gateway:
 
 namespace:
   name: ingress
+
+podSecurityContext:
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  seccompProfile:
+    type: RuntimeDefault
