@@ -18,7 +18,7 @@ spec:
         releaseName: longhorn
         values: |
           config:
-            publicAppUrl: pocketid.k8s.zakhaven.uk
+            publicAppUrl: https://pocketid.k8s.zakhaven.uk
           ingress:
             enabled: true
             hosts:
