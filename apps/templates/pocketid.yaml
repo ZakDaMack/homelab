@@ -21,9 +21,6 @@ spec:
             tag: v1.15.0
           service:
             port: 1411
-          volumeMounts:
-            - name: pocketid-data
-              mountPath: /app/data
           livenessProbe:
             initialDelaySeconds: 300
             periodSeconds: 60
