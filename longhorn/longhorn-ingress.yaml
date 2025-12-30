@@ -13,5 +13,5 @@ spec:
         - name: longhorn-frontend
           port: 80
       middlewares:
-        - name: authentik
+        - name: longhorn-auth
           namespace: ingress
