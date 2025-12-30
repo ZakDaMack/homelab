@@ -21,6 +21,8 @@ spec:
             tag: v1.16.0
           livenessProbe:
             {}
+          readinessProbe:
+            {}
           config:
             publicAppUrl: https://pocketid.k8s.zakhaven.uk
           ingress:
