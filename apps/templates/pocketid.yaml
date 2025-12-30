@@ -21,21 +21,24 @@ spec:
             tag: v1.15.0
           livenessProbe:
             initialDelaySeconds: 300
+            periodSeconds: 60
           readinessProbe:
             initialDelaySeconds: 300
-          # config:
-          #   publicAppUrl: https://pocketid.k8s.zakhaven.uk
-          # ingress:
-          #   enabled: true
-          #   hosts:
-          #     - host: pocketid.k8s.zakhaven.uk
-          #       paths:
-          #         - path: /
-          #           pathType: Prefix
-          #   tls:
-          #     - secretName: zakhaven-tls
-          #       hosts:
-          #         - pocketid.k8s.zakhaven.uk
+            periodSeconds: 60
+          config:
+            publicAppUrl: https://pocketid.k8s.zakhaven.uk
+            trustProxy: true
+          ingress:
+            enabled: true
+            hosts:
+              - host: pocketid.k8s.zakhaven.uk
+                paths:
+                  - path: /
+                    pathType: Prefix
+            tls:
+              - secretName: zakhaven-tls
+                hosts:
+                  - pocketid.k8s.zakhaven.uk
       
   syncPolicy:
     syncOptions:
