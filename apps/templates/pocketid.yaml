@@ -19,6 +19,8 @@ spec:
         values: |
           image:
             tag: v1.16.0
+          livenessProbe:
+            {}
           config:
             publicAppUrl: https://pocketid.k8s.zakhaven.uk
           ingress:
