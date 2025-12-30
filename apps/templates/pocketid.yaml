@@ -24,9 +24,17 @@ spec:
           livenessProbe:
             initialDelaySeconds: 300
             periodSeconds: 60
+            httpGet:
+              path: /health
+              port: 1411
+              scheme: HTTP
           readinessProbe:
             initialDelaySeconds: 300
             periodSeconds: 60
+            httpGet:
+              path: /health
+              port: 1411
+              scheme: HTTP
           config:
             publicAppUrl: https://pocketid.k8s.zakhaven.uk
             appUrl: https://pocketid.k8s.zakhaven.uk
