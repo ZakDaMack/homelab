@@ -23,19 +23,19 @@ spec:
             initialDelaySeconds: 300
           readinessProbe:
             initialDelaySeconds: 300
-          config:
-            publicAppUrl: https://pocketid.k8s.zakhaven.uk
-          ingress:
-            enabled: true
-            hosts:
-              - host: pocketid.k8s.zakhaven.uk
-                paths:
-                  - path: /
-                    pathType: Prefix
-            tls:
-              - secretName: zakhaven-tls
-                hosts:
-                  - pocketid.k8s.zakhaven.uk
+          # config:
+          #   publicAppUrl: https://pocketid.k8s.zakhaven.uk
+          # ingress:
+          #   enabled: true
+          #   hosts:
+          #     - host: pocketid.k8s.zakhaven.uk
+          #       paths:
+          #         - path: /
+          #           pathType: Prefix
+          #   tls:
+          #     - secretName: zakhaven-tls
+          #       hosts:
+          #         - pocketid.k8s.zakhaven.uk
       
   syncPolicy:
     syncOptions:
