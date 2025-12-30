@@ -20,9 +20,9 @@ spec:
           image:
             tag: v1.16.0
           livenessProbe:
-            {}
+            initialDelaySeconds: 120
           readinessProbe:
-            {}
+            initialDelaySeconds: 120
           config:
             publicAppUrl: https://pocketid.k8s.zakhaven.uk
           ingress:
