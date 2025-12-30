@@ -17,6 +17,8 @@ spec:
       helm:
         releaseName: longhorn
         values: |
+          image:
+            tag: v1.16.0
           config:
             publicAppUrl: https://pocketid.k8s.zakhaven.uk
           ingress:
