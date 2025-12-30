@@ -17,6 +17,10 @@ providers:
     enabled: true
     allowCrossNamespace: true
 
+rbac:
+  enabled: true
+  scope: Cluster
+
 gateway:
   listeners:
     web:

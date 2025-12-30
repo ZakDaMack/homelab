@@ -11,6 +11,8 @@ server:
     enabled: true
     hosts:
       - authentik.k8s.zakhaven.uk
+    tls:
+      - zakhaven-tls
       
 postgresql:
   enabled: true
