@@ -76,11 +76,56 @@ data:
 
 
     - Services:
+      - Identity: 
+        - Authentik:
+            icon: authentik.png
+            href: https://authentik.k8s.zakhaven.uk
+            siteMonitor: https://authentik.k8s.zakhaven.uk
+            namespace: identity
+            app: authentik
+      
+      - Ingress:
+        - Crowdsec:
+            icon: crowdsec.png
+            href: https://app.crowdsec.net
+            siteMonitor: https://app.crowdsec.net
+            container: crowdsec
+            widget:
+              type: crowdsec
+              url: http://crowdsec:8080
+              username: localhost # machine_id in crowdsec
+              password: ""
+
+        - Traefik:
+            icon: traefik.png
+            href: https://traefik.k8s.zakhaven.uk
+            siteMonitor: https://traefik.k8s.zakhaven.uk
+            namespace: ingress
+            app: traefik
+            widget:
+              type: traefik
+              url: http://traefik:8080
+              username: username # optional
+              password: password # optional
+
+        - "Cert Manager":
+            icon: cert-warden.png
+            namespace: ingress
+            app: cert-manager
+
       - Dockge:
           icon: dockge.png
           href: https://dockge.internal.zakhaven.uk
           siteMonitor: https://dockge.internal.zakhaven.uk
           container: dockge-dockge-1
+
+      - Longhorn:
+          icon: longhorn.png
+          href: https://longhorn.k8s.zakhaven.uk
+          siteMonitor: https://longhorn.k8s.zakhaven.uk
+          namespace: longhorn
+          app: longhorn
+
 
       - "Uptime Kuma":
           icon: uptime-kuma.png
@@ -96,28 +141,13 @@ data:
           href: https://vault.zakhaven.uk
           siteMonitor: https://vault.zakhaven.uk
           container: essentials-vaultwarden-1
-
-      - Crowdsec:
-          icon: crowdsec.png
-          href: https://app.crowdsec.net
-          siteMonitor: https://app.crowdsec.net
-          container: crowdsec
-          widget:
-            type: crowdsec
-            url: http://crowdsec:8080
-            username: localhost # machine_id in crowdsec
-            password: ""
-
-      - Traefik:
-          icon: traefik.png
-          href: https://dashbaord.internal.zakhaven.uk
-          siteMonitor: https://dashbaord.internal.zakhaven.uk
-          container: traefik
-          widget:
-            type: traefik
-            url: http://traefik:8080
-            username: username # optional
-            password: password # optional
+      
+      - Portfolio:
+          icon: zulip.png
+          href: https://portfolio.k8s.zakhaven.uk
+          siteMonitor: https://portfolio.k8s.zakhaven.uk
+          namespace: default
+          app: portfolio
 
       - Minecraft:
           icon: minecraft.png
@@ -196,7 +226,7 @@ data:
   bookmarks.yaml: |
     - Bookmarks:
       - GitHub:
-        - icon: github.png
+        - icon: github-light.png
           href: https://github.com/
       - Docker:
         - icon: docker.png
@@ -250,7 +280,7 @@ data:
     color: slate
 
     providers:
-      openweathermap: ""
+      openweathermap: $secret:config-secret:weather_apikey
       weatherapi: weatherapiapikey
 
     layout:
@@ -268,7 +298,13 @@ data:
           style: row
           columns: 4
       Services:
+        header: false
         style: row
+        columns: 2
+        Ingress:
+          header: true
+        Identity:
+          header: true
 
   widgets.yaml: |
     - kubernetes:
@@ -286,8 +322,8 @@ data:
 
     - unifi_console:
         url: https://10.10.2.1/
-        username: api
-        password: ""
+        username: $secret:config-secret:unifi_username
+        password: $secret:config-secret:unifi_password
 
     - datetime:
         text_size: xl
