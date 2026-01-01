@@ -289,7 +289,7 @@ data:
           showLabel: true
 
     - unifi_console:
-        url: https://10.10.2.1/
+        url: https://10.10.2.1
         key: "{{HOMEPAGE_VAR_UNIFI_KEY}}"
 
     - datetime:
