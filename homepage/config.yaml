@@ -16,63 +16,63 @@ data:
             icon: jellyfin.png
             href: https://jellyfin.internal.zakhaven.uk
             siteMonitor: https://jellyfin.internal.zakhaven.uk
-            container: jellyfin
-            widget:
-              type: jellyfin
-              url: https://jellyfin.internal.zakhaven.uk
-              key: ""
+            # container: jellyfin
+            # widget:
+            #   type: jellyfin
+            #   url: https://jellyfin.internal.zakhaven.uk
+            #   key: ""
 
         - Jellyseer:
             icon: jellyseerr.png
             href: https://jellyseer.zakhaven.uk
             siteMonitor: https://jellyseer.zakhaven.uk
-            container: jellyseerr
-            widget:
-              type: jellyseerr
-              url: https://jellyseer.zakhaven.uk
-              key: ""
+            # container: jellyseerr
+            # widget:
+            #   type: jellyseerr
+            #   url: https://jellyseer.zakhaven.uk
+            #   key: ""
 
       - Other:
         - Sonarr:
             icon: sonarr.png
             href: https://sonarr.internal.zakhaven.uk
             siteMonitor: https://sonarr.internal.zakhaven.uk
-            container: sonarr
-            widget:
-              type: sonarr
-              url: https://sonarr.internal.zakhaven.uk
-              key: ""
+            # container: sonarr
+            # widget:
+            #   type: sonarr
+            #   url: https://sonarr.internal.zakhaven.uk
+            #   key: ""
 
         - Radarr:
             icon: radarr.png
             href: https://radarr.internal.zakhaven.uk
             siteMonitor: https://radarr.internal.zakhaven.uk
-            container: radarr
-            widget:
-              type: radarr
-              url: https://radarr.internal.zakhaven.uk
-              key: ""
+            # container: radarr
+            # widget:
+            #   type: radarr
+            #   url: https://radarr.internal.zakhaven.uk
+            #   key: ""
 
         - qBittorrent:
             icon: qbittorrent.png
             href: https://qbittorrent.internal.zakhaven.uk
             siteMonitor: https://qbittorrent.internal.zakhaven.uk
-            container: qbittorrent
-            widget:
-              type: qbittorrent
-              url: https://qbittorrent.internal.zakhaven.uk
-              username: admin
-              password: ""
+            # container: qbittorrent
+            # widget:
+            #   type: qbittorrent
+            #   url: https://qbittorrent.internal.zakhaven.uk
+            #   username: admin
+            #   password: ""
 
         - Jackett:
             icon: jackett.png
             href: https://jackett.internal.zakhaven.uk
             siteMonitor: https://jackett.internal.zakhaven.uk
-            container: jackett
-            widget:
-              type: jackett
-              url: https://jackett.internal.zakhaven.uk
-              password: ""
+            # container: jackett
+            # widget:
+            #   type: jackett
+            #   url: https://jackett.internal.zakhaven.uk
+            #   password: ""
 
 
     - Services:
@@ -89,12 +89,12 @@ data:
             icon: crowdsec.png
             href: https://app.crowdsec.net
             siteMonitor: https://app.crowdsec.net
-            container: crowdsec
-            widget:
-              type: crowdsec
-              url: http://crowdsec:8080
-              username: localhost # machine_id in crowdsec
-              password: ""
+            # container: crowdsec
+            # widget:
+            #   type: crowdsec
+            #   url: http://crowdsec:8080
+            #   username: localhost # machine_id in crowdsec
+            #   password: ""
 
         - Traefik:
             icon: traefik.png
@@ -102,11 +102,11 @@ data:
             siteMonitor: https://traefik.k8s.zakhaven.uk
             namespace: ingress
             app: traefik
-            widget:
-              type: traefik
-              url: http://traefik:8080
-              username: username # optional
-              password: password # optional
+            # widget:
+            #   type: traefik
+            #   url: http://traefik:8080
+            #   username: username # optional
+            #   password: password # optional
 
         - "Cert Manager":
             icon: cert-warden.png
@@ -126,7 +126,7 @@ data:
           icon: bitwarden.png
           href: https://vault.zakhaven.uk
           siteMonitor: https://vault.zakhaven.uk
-          container: essentials-vaultwarden-1
+          # container: essentials-vaultwarden-1
       
       - Portfolio:
           icon: zulip.png
@@ -135,54 +135,36 @@ data:
           namespace: default
           app: portfolio
 
-      - Minecraft:
-          icon: minecraft.png
-          container: minceraft-minecraft-1
-          widget:
-            type: minecraft
-            url: udp://minecraftserveripordomain:port
-
       - "Home Assistant":
           icon: home-assistant.png
           href: https://hass.zakhaven.uk
           siteMonitor: https://hass.zakhaven.uk
-          widget:
-            type: homeassistant
-            url: http://homeassistant.host.or.ip:port
-            key: access_token
+          # widget:
+          #   type: homeassistant
+          #   url: http://homeassistant.host.or.ip:port
+          #   key: access_token
 
       - Unifi:
           icon: unifi.png
           url: https://10.10.2.1/
           siteMonitor: https://10.10.2.1/
-          widget:
-            type: unifi
-            url: https://unifi.host.or.ip:port
-            username: user
-            password: pass
+          # widget:
+          #   type: unifi
+          #   url: https://unifi.host.or.ip:port
+          #   username: user
+          #   password: pass
 
       - Outline:
           icon: outline.png
           url: https://outline.zakhaven.uk
           siteMonitor: https://outline.zakhaven.uk
-          container: outline-outline-1
-
-      - Proxmox:
-          icon: proxmox.png
-          url: https://10.10.2.10:8006
-          siteMonitor: https://10.10.2.10:8006
-          widget:
-            type: proxmox
-            url: https://10.10.2.10:8006
-          # username: api_token_id
-          # password: api_token_secret
-          # node: pve-1 # optional
+          # container: outline-outline-1
 
       - Cloudflare:
           icon: cloudflare.png
           url: https://dash.cloudflare.com
           siteMonitor: https://dash.cloudflare.com
-          container: essentials-cloudflare-ddns-zakhaven-1
+          # container: essentials-cloudflare-ddns-zakhaven-1
 
       - "Better Stack":
           icon: better-stack.png
@@ -193,17 +175,17 @@ data:
           icon: windmill.png
           url: https://windmill.zakhaven.uk
           siteMonitor: https://windmill.zakhaven.uk
-          container: windmill-windmill-1
+          # container: windmill-windmill-1
 
       - Synology:
           icon: synology.png
           url: https://mediastorage.zakhaven.uk
           siteMonitor: https://mediastorage.zakhaven.uk
-          widget:
-            type: diskstation
-            url: https://mediastorage.zakhaven.uk
-            username: username
-            password: password
+          # widget:
+          #   type: diskstation
+          #   url: https://mediastorage.zakhaven.uk
+          #   username: username
+          #   password: password
             #  volume: volume_N # optional
 
   custom.css: ""
