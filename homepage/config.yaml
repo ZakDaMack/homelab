@@ -89,7 +89,8 @@ data:
             icon: crowdsec.png
             href: https://app.crowdsec.net
             siteMonitor: https://app.crowdsec.net
-            # container: crowdsec
+            namespace: ingress
+            app: crowdsec
             # widget:
             #   type: crowdsec
             #   url: http://crowdsec:8080
@@ -113,6 +114,16 @@ data:
             namespace: ingress
             app: cert-manager
 
+      - ArgoCD:
+          icon: argo-cd.png
+          href: https://argocd.k8s.zakhaven.uk
+          siteMonitor: https://argocd.k8s.zakhaven.uk
+          namespace: argocd
+          app: argocd
+          widget:
+            type: argocd
+            url: https://argocd.k8s.zakhaven.uk
+            key: "{{HOMEPAGE_VAR_ARGOCD_KEY}}"
 
       - Longhorn:
           icon: longhorn.png
@@ -146,13 +157,12 @@ data:
 
       - Unifi:
           icon: unifi.png
-          url: https://10.10.2.1/
+          url: https://192.168.0.1/
           siteMonitor: https://10.10.2.1/
-          # widget:
-          #   type: unifi
-          #   url: https://unifi.host.or.ip:port
-          #   username: user
-          #   password: pass
+          widget:
+            type: unifi
+            url: https://10.10.2.1
+            key: "{{HOMEPAGE_VAR_UNIFI_KEY}}"
 
       - Outline:
           icon: outline.png
