@@ -290,8 +290,7 @@ data:
 
     - unifi_console:
         url: https://10.10.2.1/
-        username: "{{HOMEPAGE_VAR_UNIFI_USERNAME}}"
-        password: "{{HOMEPAGE_VAR_UNIFI_PASSWORD}}"
+        key: "{{HOMEPAGE_VAR_UNIFI_KEY}}"
 
     - datetime:
         text_size: xl
