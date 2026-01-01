@@ -9,7 +9,10 @@ blah blah blah
 - Portfolio
 - Longhorn
 - Authentik
-- Dashboard (WIP)
+- Cert Manager
+- Pocket ID (disabled)
+- Metrics Server
+- Homepage (WIP)
 
 ## Installation
 
@@ -19,6 +22,7 @@ blah blah blah
 - Kubectl
 - Kustomize
 - ArgoCD
+- SealedSecrets
 
 ### Bootstrapping
 
@@ -34,11 +38,21 @@ argocd app sync apps
 argocd app sync -l app.kubernetes.io/instance=apps
 ```
 
+### Sealed Secrets
+
+Currently, the app uses sealed secrets. It is installed via Helm.
+
+```bash
+helm create ns sealed-secrets
+helm install sealed-secrets -n sealed-secrets --set-string fullnameOverride=sealed-secrets-controller sealed-secrets/sealed-secrets
+```
+
+Example
+`kubeseal --scope namespace-wide -f <file> -w <output> -n sealed-secrets --controller-name sealed-secrets-controller --controller-namespace sealed-secrets -n <ns>`
+
 ## TODO
 
-- Dashboard
+- Crowdsec
 - Metrics (node exporter, logging, prometheus, grafana, loki)
 - Firewall (Cilium?)
-- SecretsManager (how to store?) (infisical, vault)
 - Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline)
-- Databases?
