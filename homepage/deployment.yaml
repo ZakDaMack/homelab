@@ -27,6 +27,19 @@ spec:
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
               value: homepage.k8s.zakhaven.uk
+
+            - name: HOMEPAGE_VAR_UNIFI_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: config-secret
+                  key: unifi_username
+                  
+            - name: HOMEPAGE_VAR_UNIFI_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: config-secret
+                  key: unifi_password 
+
           ports:
             - name: http
               containerPort: 3000
