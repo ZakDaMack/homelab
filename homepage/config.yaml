@@ -248,7 +248,7 @@ data:
     color: slate
 
     providers:
-      openweathermap: $secret:config-secret:weather_apikey
+      openweathermap: "{{HOMEPAGE_VAR_OPENWEATHER_KEY}}"
       weatherapi: weatherapiapikey
 
     layout:
