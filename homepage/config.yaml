@@ -113,11 +113,6 @@ data:
             namespace: ingress
             app: cert-manager
 
-      - Dockge:
-          icon: dockge.png
-          href: https://dockge.internal.zakhaven.uk
-          siteMonitor: https://dockge.internal.zakhaven.uk
-          container: dockge-dockge-1
 
       - Longhorn:
           icon: longhorn.png
@@ -126,15 +121,6 @@ data:
           namespace: longhorn
           app: longhorn
 
-
-      - "Uptime Kuma":
-          icon: uptime-kuma.png
-          href: https://status.internal.zakhaven.uk
-          siteMonitor: https://status.internal.zakhaven.uk
-          container: essentials-uptimekuma-1
-          widget:
-            type: uptimekuma
-            url: https://status.internal.zakhaven.uk/status/internal
 
       - "Vault Warden":
           icon: bitwarden.png
