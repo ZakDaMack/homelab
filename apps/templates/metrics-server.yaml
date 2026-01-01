@@ -16,6 +16,9 @@ spec:
       targetRevision: 3.13.0  
       helm:
         releaseName: metrics-server
+        values: |
+          args:
+            - --kubelet-insecure-tls
       
   syncPolicy:
     syncOptions:
