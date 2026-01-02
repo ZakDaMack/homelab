@@ -30,6 +30,30 @@ spec:
               paths:
                 - /
 
+          prometheus:
+            prometheusSpec:
+              retention: 30d
+              retentionSize: "8GB"
+              storageSpec:
+                volumeClaimTemplate:
+                  spec:
+                    storageClassName: longhorn-test
+                    accessModes: ["ReadWriteOnce"]
+                    resources:
+                      requests:
+                        storage: 10Gi
+
+          alertmanager:
+            alertmanagerSpec:
+              storage:
+                volumeClaimTemplate:
+                  spec:
+                    storageClassName: longhorn-test
+                    accessModes: ["ReadWriteOnce"]
+                    resources:
+                      requests:
+                        storage: 5Gi
+
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
