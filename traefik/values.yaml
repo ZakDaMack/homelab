@@ -20,6 +20,11 @@ providers:
 rbac:
   enabled: true
 
+metrics:
+  prometheus:
+    serviceMonitor:
+      enabled: true
+
 gateway:
   listeners:
     web:
