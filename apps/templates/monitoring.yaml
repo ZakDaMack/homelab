@@ -16,7 +16,23 @@ spec:
       targetRevision: 80.9.2 
       helm:
         releaseName: kube-prometheus-stack
-        
+        values: |
+          grafana:
+            enabled: true
+            ingress:
+              enabled: true
+              ingressClassName: traefik
+              annotations:
+                traefik.ingress.kubernetes.io/router.entrypoints: websecure
+              hosts:
+                - grafana.k8s.zakhaven.uk
+              paths:
+                - /
+              tls:
+                - secretName: ingress/zakhaven-tls
+                  hosts:
+                    - grafana.k8s.zakhaven.uk
+
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
