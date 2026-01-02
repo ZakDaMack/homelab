@@ -1,0 +1,2 @@
+# for safety, all secrets unsealed should end with -secret.yaml to avoid accidental publication
+*-secret.yaml
