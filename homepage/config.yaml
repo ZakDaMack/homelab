@@ -119,7 +119,7 @@ data:
           href: https://argocd.k8s.zakhaven.uk
           siteMonitor: https://argocd.k8s.zakhaven.uk
           namespace: argocd
-          app: argocd
+          app: argocd-server
           widget:
             type: argocd
             url: https://argocd.k8s.zakhaven.uk

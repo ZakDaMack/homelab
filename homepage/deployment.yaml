@@ -77,6 +77,10 @@ spec:
               subPath: widgets.yaml
             - mountPath: /app/config/logs
               name: logs
+            - mountPath: /app/public/images/background.jpg
+              name: homepage-assets
+              subPath: background.jpg
+              readOnly: true
       volumes:
         - name: homepage-config
           configMap:
