@@ -9,6 +9,14 @@ ports:
         to: websecure
         scheme: https
         permanent: true
+  
+  metrics:
+    port: 9100
+    expose:
+      default: true
+    exposedPort: 9100
+    protocol: TCP
+
 
 providers:
   kubernetesGateway:
