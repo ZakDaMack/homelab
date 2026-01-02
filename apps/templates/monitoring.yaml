@@ -28,10 +28,10 @@ spec:
                 - grafana.k8s.zakhaven.uk
               paths:
                 - /
-              tls:
-                - secretName: ingress/zakhaven-tls
-                  hosts:
-                    - grafana.k8s.zakhaven.uk
+              # tls:
+              #   - secretName: ingress/zakhaven-tls
+              #     hosts:
+              #       - grafana.k8s.zakhaven.uk
 
   syncPolicy:
     syncOptions:
