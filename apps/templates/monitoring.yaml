@@ -19,7 +19,6 @@ spec:
         values: |
           grafana:
             enabled: true
-            adminPassword: "changeme" # TODO: change pw
             ingress:
               enabled: true
               ingressClassName: ingress-traefik
@@ -29,6 +28,36 @@ spec:
                 - grafana.k8s.zakhaven.uk
               paths:
                 - /
+
+            grafana.ini:
+              server:
+                root_url: https://grafana.k8s.zakhaven.uk
+                serve_from_sub_path: false
+
+              users:
+                auto_assign_org: true
+
+              auth:
+                disable_login_form: false
+                oauth_auto_login: true 
+
+              auth.generic_oauth:
+                enabled: true
+                name: Authentik
+                client_id: cuAopAbXzCKPqvJppWm10yT8vsCOz1ObMxxhNsM0
+                client_secret: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET}
+                scopes: openid profile email
+                use_pkce: true
+                auth_url:  https://authentik.k8s.zakhaven.uk/grafana/o/authorize/
+                token_url: https://authentik.k8s.zakhaven.uk/grafana/o/token/
+                api_url:   https://authentik.k8s.zakhaven.uk/grafana/o/userinfo/
+                role_attribute_path: contains(groups[*], 'Admin') && 'Admin' || 'Viewer'
+
+            envValueFrom:
+              GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET:
+                secretKeyRef:
+                  name: oidc-clientsecret
+                  key: clientSecret
 
           prometheus:
             prometheusSpec:
@@ -53,6 +82,10 @@ spec:
                     resources:
                       requests:
                         storage: 5Gi
+
+    - repoURL: https://github.com/ZakDaMack/homelab
+      targetRevision: HEAD
+      path: monitoring
 
   syncPolicy:
     syncOptions:
