@@ -48,9 +48,9 @@ spec:
                 client_secret: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET}
                 scopes: openid profile email
                 use_pkce: true
-                auth_url:  https://authentik.k8s.zakhaven.uk/grafana/o/authorize/
-                token_url: https://authentik.k8s.zakhaven.uk/grafana/o/token/
-                api_url:   https://authentik.k8s.zakhaven.uk/grafana/o/userinfo/
+                auth_url:  https://authentik.k8s.zakhaven.uk/application/o/authorize/
+                token_url: https://authentik.k8s.zakhaven.uk/application/o/token/
+                api_url:   https://authentik.k8s.zakhaven.uk/application/o/userinfo/
                 role_attribute_path: contains(groups[*], 'Admin') && 'Admin' || 'Viewer'
 
             envValueFrom:
