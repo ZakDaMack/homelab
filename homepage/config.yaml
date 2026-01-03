@@ -125,6 +125,13 @@ data:
             url: https://argocd.k8s.zakhaven.uk
             key: "{{HOMEPAGE_VAR_ARGOCD_KEY}}"
 
+      - Grafana:
+          icon: grafana.png
+          href: https://grafana.k8s.zakhaven.uk
+          siteMonitor: https://grafana.k8s.zakhaven.uk
+          namespace: monitoring
+          app: grafana
+
       - Longhorn:
           icon: longhorn.png
           href: https://longhorn.k8s.zakhaven.uk

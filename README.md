@@ -12,6 +12,7 @@ blah blah blah
 - Cert Manager
 - Pocket ID (disabled)
 - Metrics Server
+- Grafana
 - Homepage (WIP)
 
 ## Installation
@@ -20,9 +21,10 @@ blah blah blah
 
 - Talosctl (iSCSI, Linux-util)
 - Kubectl
+- Helm
 - Kustomize
 - ArgoCD
-- SealedSecrets
+- Kubeseal
 
 ### Bootstrapping
 
@@ -48,11 +50,11 @@ helm install sealed-secrets -n sealed-secrets --set-string fullnameOverride=seal
 ```
 
 Example
-`kubeseal --scope namespace-wide -f <file> -w <output> -n sealed-secrets --controller-name sealed-secrets-controller --controller-namespace sealed-secrets -n <ns>`
+`kubeseal --scope namespace-wide -f <file> -w <output> --controller-name sealed-secrets-controller --controller-namespace sealed-secrets`
 
 ## TODO
 
+- Grafana login authentik, grafana dashbaord access
 - Crowdsec
-- Metrics (node exporter, logging, prometheus, grafana, loki)
 - Firewall (Cilium?)
 - Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline)
