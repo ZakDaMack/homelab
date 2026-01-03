@@ -22,7 +22,7 @@ spec:
             adminPassword: "changeme" # TODO: change pw
             ingress:
               enabled: true
-              ingressClassName: traefik
+              ingressClassName: ingress-traefik
               annotations:
                 traefik.ingress.kubernetes.io/router.entrypoints: websecure
               hosts:
