@@ -40,10 +40,11 @@ spec:
               auth:
                 disable_login_form: false
                 oauth_auto_login: true 
+                signout_redirect_url: "https://authentik.k8s.zakhaven.uk/application/o/grafana/end-session/"
 
               auth.generic_oauth:
                 enabled: true
-                name: Authentik
+                name: authentik
                 client_id: cuAopAbXzCKPqvJppWm10yT8vsCOz1ObMxxhNsM0
                 client_secret: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET}
                 scopes: openid profile email
