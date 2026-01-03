@@ -184,7 +184,7 @@ data:
           # container: essentials-cloudflare-ddns-zakhaven-1
 
       - "Better Stack":
-          icon: better-stack.png
+          icon: mozilla-monitor.png
           url: https://betterstack.com/users/sign-in
           siteMonitor: https://betterstack.com/users/sign-in
 
