@@ -30,7 +30,11 @@ rbac:
 
 metrics:
   prometheus:
+    enabled: true
+    entryPoint: 'metrics'
     serviceMonitor:
+      enabled: true
+    service:
       enabled: true
 
 gateway:
