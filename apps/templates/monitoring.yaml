@@ -45,7 +45,7 @@ spec:
               auth.generic_oauth:
                 enabled: true
                 name: authentik
-                client_id: cuAopAbXzCKPqvJppWm10yT8vsCOz1ObMxxhNsM0
+                client_id: Wwehqm3BNCaR3bsMuNhsnREo00mAmKaIIAPIB2M0
                 client_secret: $__env{GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET}
                 scopes: openid profile email
                 auth_url:  https://authentik.k8s.zakhaven.uk/application/o/authorize/
