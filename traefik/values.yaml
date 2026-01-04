@@ -25,6 +25,16 @@ providers:
     enabled: true
     allowCrossNamespace: true
 
+plugin:
+  bouncer:
+    forwardedHeadersCustomName: X-Real-Ip
+
+experimental:
+  plugins:
+    crowdsec-bouncer-traefik-plugin:
+      moduleName: "github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
+      version: "v1.4.5"
+
 rbac:
   enabled: true
 

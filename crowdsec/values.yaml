@@ -1,0 +1,31 @@
+# for raw logs format: json or cri (docker|containerd)
+container_runtime: docker
+agent:
+  # Specify each pod whose logs you want to process
+  acquisition:
+    # The namespace where the pod is located
+    - namespace: ingress
+      # The pod name
+      podName: ingress-traefik-*
+      # as in crowdsec configuration, we need to specify the program name to find a matching parser
+      program: ingress-traefik
+  env:
+    - name: COLLECTIONS
+      value: "crowdsecurity/traefik"
+lapi:
+  env:
+    # To enroll the Security Engine to the console
+    - name: BOUNCER_KEY_traefik
+      valueFrom:
+        secretKeyRef:
+          name: crowdsec-secret
+          key: bouncer_key
+    - name: ENROLL_KEY
+      valueFrom:
+        secretKeyRef:
+          name: crowdsec-secret
+          key: enroll_key
+    - name: ENROLL_INSTANCE_NAME
+      value: "zakhaven-talos"
+    - name: ENROLL_TAGS
+      value: "k8s linux test"
