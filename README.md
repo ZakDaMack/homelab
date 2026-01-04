@@ -54,7 +54,8 @@ Example
 
 ## TODO
 
-- Grafana login authentik, grafana dashbaord access
 - Crowdsec
 - Firewall (Cilium?)
 - Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline)
+- Documentation
+- Simplify bootstrapping

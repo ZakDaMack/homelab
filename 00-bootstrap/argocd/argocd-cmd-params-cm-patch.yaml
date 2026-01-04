@@ -4,3 +4,15 @@ metadata:
   name: argocd-cmd-params-cm
 data:
   server.insecure: "true"
+  url: https://argocd.k8s.zakhaven.uk
+  dex.config: |
+    {}
+  oidc.config: |
+    name: Authentik
+    issuer: https://authentik.k8s.zakhaven.uk/application/o/argo-cd/
+    clientID: 27bQSSxaEfZUEserrVRZXXc4FzEFHUBeFiI4pXmc
+    clientSecret: $oidc.authentik.clientSecret
+    scopes:
+      - openid
+      - profile
+      - email
