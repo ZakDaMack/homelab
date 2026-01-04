@@ -20,6 +20,10 @@ spec:
           secretKeyExternalSecret:
             name: outline-secret
             key: secret_key
+          
+          utilsSecretExternalSecret:
+            name: outline-secret
+            key: utils_key
 
           ingress:
             enabled: true
