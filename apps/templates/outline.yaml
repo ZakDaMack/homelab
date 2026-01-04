@@ -54,6 +54,20 @@ spec:
                 enabled: true
                 storageClass: "longhorn-test"
                 
+          postgresql:
+            enabled: true
+            auth:
+              username: outline
+              password: f34744a969346bf6a167d2bab14f6937ff2ca0f38547c453370e64be3676f596
+              database: outline
+            primary:
+              persistence:
+                enabled: true
+          
+          redis:
+            enabled: true
+            architecture: standalone
+                
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
       path: outline
