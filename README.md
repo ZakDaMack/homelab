@@ -14,6 +14,7 @@ blah blah blah
 - Metrics Server
 - Grafana
 - Homepage (WIP)
+- Outline
 
 ## Installation
 
@@ -54,8 +55,6 @@ Example
 
 ## TODO
 
-- Crowdsec
-- Firewall (Cilium?)
-- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline)
+- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline, paperlessNG)
 - Documentation
 - Simplify bootstrapping

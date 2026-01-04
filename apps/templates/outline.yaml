@@ -1,0 +1,66 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: outline
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  sources:
+    - repoURL: 'https://community-charts.github.io/helm-charts'
+      targetRevision: '0.7.3'
+      chart: outline
+      helm:
+        releaseName: outline
+        values: |
+          secretKeyExternalSecret:
+            name: outline-secret
+            key: secret_key
+
+          ingress:
+            enabled: true
+            hosts:
+              - host: "outline.k8s.zakhaven.uk"
+                paths:
+                  - path: /
+                    pathType: ImplementationSpecific
+          
+          auth:
+            oidc:
+              enabled: true
+              clientId: "2kaa8fGjhCgvJlcjTmL2PAAQrUtLlYYZ0GqQFCW3"
+              existingSecret:
+                name: outline-secret
+                clientSecretKey: client_secret
+              authUri: "https://authentik.k8s.zakhaven.uk/application/o/authorize/"
+              tokenUri: "https://authentik.k8s.zakhaven.uk/application/o/token/"
+              userInfoUri: "https://authentik.k8s.zakhaven.uk/application/o/userinfo/"
+              logoutUri: "https://authentik.k8s.zakhaven.uk/application/o/outline/end-session/"
+              usernameClaim: "preferred_username"
+              displayName: "Authentik"
+              scopes:
+                - openid
+                - profile
+                - email
+          
+          fileStorage:
+            mode: "local"
+            local:
+              persistence:
+                enabled: true
+                storageClass: "longhorn-test"
+                
+    - repoURL: https://github.com/ZakDaMack/homelab
+      targetRevision: HEAD
+      path: outline
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: 
+      prune: true
+      selfHeal: true
