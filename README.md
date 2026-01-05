@@ -55,6 +55,6 @@ Example
 
 ## TODO
 
-- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, outline, paperlessNG)
+- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, paperlessNGX)
 - Documentation
 - Simplify bootstrapping
