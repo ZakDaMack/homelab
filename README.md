@@ -15,6 +15,7 @@ blah blah blah
 - Grafana
 - Homepage (WIP)
 - Outline
+- PaperlessNGX
 
 ## Installation
 
@@ -55,6 +56,6 @@ Example
 
 ## TODO
 
-- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, paperlessNGX)
+- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver)
 - Documentation
 - Simplify bootstrapping
