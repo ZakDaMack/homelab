@@ -27,7 +27,7 @@ spec:
         - name: PAPERLESS_REDIS
           value: redis://redis:6379
         - name: PAPERLESS_DBHOST
-          value: postgres://paperless-db:5432
+          value: postgres://paperless-db
         - name: PAPERLESS_DBNAME
           value: paperless
         - name: PAPERLESS_URL
