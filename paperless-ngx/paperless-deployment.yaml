@@ -37,29 +37,29 @@ spec:
         - name: PAPERLESS_SECRET_KEY
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: secret_key
 
         - name: PAPERLESS_DBUSER
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: db_username
         - name: PAPERLESS_DBPASS
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: db_password
               
         - name: PAPERLESS_ADMIN_USER
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: admin_username
         - name: PAPERLESS_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: admin_password
         ports:
         - containerPort: 8000

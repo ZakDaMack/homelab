@@ -24,12 +24,12 @@ spec:
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: db_username
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: paperless-secrets
+              name: paperless-secret
               key: db_password
         ports:
         - containerPort: 5432
