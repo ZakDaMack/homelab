@@ -173,9 +173,17 @@ data:
 
       - Outline:
           icon: outline.png
-          url: https://outline.zakhaven.uk
-          siteMonitor: https://outline.zakhaven.uk
-          # container: outline-outline-1
+          url: https://outline.k8s.zakhaven.uk
+          siteMonitor: https://outline.k8s.zakhaven.uk
+          namespace: default
+          app: outline
+
+      - "Paperless NGX":
+          icon: paperless-ngx.png
+          url: https://paperless.k8s.zakhaven.uk
+          siteMonitor: https://paperless.k8s.zakhaven.uk
+          namespace: default
+          app: paperless-ngx
 
       - Cloudflare:
           icon: cloudflare.png

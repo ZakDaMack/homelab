@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db
+  name: paperless-db
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db
+      app: paperless-db
   template:
     metadata:
       labels:
-        app: db
+        app: paperless-db
     spec:
       containers:
-      - name: db
+      - name: paperless-db
         image: postgres:17.4
         env:
         - name: POSTGRES_DB
