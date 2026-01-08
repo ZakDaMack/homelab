@@ -76,7 +76,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: paperless-oidc-secret
-              key: admin_password
+              key: provider
 
         ports:
         - containerPort: 8000
