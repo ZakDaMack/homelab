@@ -25,6 +25,8 @@ spec:
             name: outline-secret
             key: utils_key
 
+          url: "https://outline.k8s.zakhaven.uk/"
+
           ingress:
             enabled: true
             hosts:
@@ -71,6 +73,9 @@ spec:
           redis:
             enabled: true
             architecture: standalone
+          
+          web:
+            forceHttps: false
                 
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
