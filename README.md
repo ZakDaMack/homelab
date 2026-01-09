@@ -56,6 +56,7 @@ Example
 
 ## TODO
 
-- Apps (windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver)
+- Apps (n8n/windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver)
 - Documentation
 - Simplify bootstrapping
+- Talos confs

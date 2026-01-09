@@ -1,0 +1,55 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: n8n
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  sources:
+    - repoURL: 'https://community-charts.github.io/helm-charts'
+      targetRevision: '0.7.3'
+      chart: n8n
+      helm:
+        releaseName: n8n
+        values: |
+          db:
+            type: sqlite
+            sqlite:
+              database: "database.sqlite"
+              poolSize: 0  # Disable connection pooling
+              vacuum: false  # Disable VACUUM on startup
+
+          main:
+            persistence:
+              enabled: true
+              volumeName: "n8n-sqlite-data"
+              mountPath: "/home/node/.n8n"
+              size: 5Gi
+              accessMode: ReadWriteOnce
+              storageClass: "longhorn-test"
+                annotations:
+                  helm.sh/resource-policy: keep
+
+          ingress:
+            enabled: true
+            hosts:
+              - host: "n8n.k8s.zakhaven.uk"
+                paths:
+                  - path: /
+                    pathType: Prefix
+          
+          
+          # TODO - add servicemonitor
+              
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: 
+      prune: true
+      selfHeal: true
