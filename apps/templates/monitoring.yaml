@@ -62,7 +62,7 @@ spec:
           prometheus:
             prometheusSpec:
               retention: 30d
-              retentionSize: "8GB"
+              retentionSize: "5GB"
               storageSpec:
                 volumeClaimTemplate:
                   spec:
@@ -70,7 +70,7 @@ spec:
                     accessModes: ["ReadWriteOnce"]
                     resources:
                       requests:
-                        storage: 10Gi
+                        storage: 6Gi
 
           alertmanager:
             alertmanagerSpec:
@@ -81,7 +81,7 @@ spec:
                     accessModes: ["ReadWriteOnce"]
                     resources:
                       requests:
-                        storage: 5Gi
+                        storage: 2Gi
 
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
