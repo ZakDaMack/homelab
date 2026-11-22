@@ -1,2 +1,6 @@
 # for safety, all secrets unsealed should end with -secret.yaml to avoid accidental publication
 *-secret.yaml
+
+# certs required for talosctl, dont want to upload that to git however
+00-talos/secrets.yaml
+00-talos

@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openbao
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: identity
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  sources:
+    - repoURL: 'https://openbao.github.io/openbao-helm'
+      targetRevision: '0.30.8'
+      chart: openbao
+      helm:
+        releaseName: openbao
+        valueFiles:
+          - $values/openbao/values.yaml
+
+    - repoURL: https://github.com/ZakDaMack/homelab
+      targetRevision: HEAD
+      ref: values
+      
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

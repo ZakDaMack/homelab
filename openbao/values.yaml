@@ -1,0 +1,24 @@
+global:
+  enabled: true
+  tlsDisable: false
+  serverTelemetry:
+    prometheusOperator: true
+
+injector:
+  metrics:
+    enabled: true
+  logLevel: "info"
+  logFormat: "standard"
+
+csi:
+  enabled: true
+
+ui:
+  enabled: true
+
+server:
+  ingress:
+    enabled: true
+    ingressClassName: ingress-traefik
+    hosts:
+      - openbao.k8s.zakhaven.uk
