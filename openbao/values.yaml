@@ -21,4 +21,6 @@ server:
     enabled: true
     ingressClassName: ingress-traefik
     hosts:
-      - openbao.k8s.zakhaven.uk
+      - host: openbao.k8s.zakhaven.uk
+        paths:
+          - /
