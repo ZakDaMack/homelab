@@ -3,6 +3,11 @@ kind: Kustomization
 
 resources:
   - https://raw.githubusercontent.com/metallb/metallb/v0.14.9/config/manifests/metallb-native.yaml
-  - ./00-metallb-config.yaml
+
+patches:
+  - target:
+      kind: DaemonSet
+      name: speaker
+    path: speaker-args.patch.yaml
 
 namespace: metallb-system
