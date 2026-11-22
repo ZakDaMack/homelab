@@ -113,5 +113,5 @@ Example
 
 - Apps (n8n/windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, CloudNativePG)
 - Documentation
-- Simplify bootstrapping
-- Talos confs
+- Simplify bootstrapping (scripting?)
+- Talos confs (add nvmes)
