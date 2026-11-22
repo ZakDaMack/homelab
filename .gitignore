@@ -5,3 +5,5 @@
 /00-talos/*
 !/00-talos/controlplane-network.patch.yaml
 !/00-talos/controlplane-scheduling.patch.yaml
+!/00-talos/controlplane-longhorn-volume.patch.yaml
+!/00-talos/controlplane-longhorn-kubelet.patch.yaml

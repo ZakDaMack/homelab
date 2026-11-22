@@ -32,7 +32,14 @@ blah blah blah
 
 Talos is a blah [TODO]
 
-Get a talos image from the [Talos Image Factory](https://factory.talos.dev/)
+Get a talos image from the [Talos Image Factory](https://factory.talos.dev/). Worth adding these packages for the apps in ArgoCD to work:
+
+- siderolabs/i915 (20261019-v1.14.6) - Intel QuickSync for media apps
+- siderolabs/iscsi-tools (v0.2.0) - For Loghorn driver management
+- siderolabs/nfs-utils (v0.1.1) - For working with NFS NAS integration
+- siderolabs/util-linux-tools (2.42.2) - For Loghorn driver management
+
+A pre generetaed image ID is `557d292200ce115a3b2211f3c34fd9153957d84aab71290c7774e9bc0d0f4c2d`. The ISO can be found [here](https://factory.talos.dev/image/557d292200ce115a3b2211f3c34fd9153957d84aab71290c7774e9bc0d0f4c2d/v1.14.6/metal-amd64.iso).
 
 Generate the Talos configs with the fixed IP patch for `niflheim-cp-1` and the
 scheduling patch that lets it run workloads alongside the control plane.
@@ -45,6 +52,8 @@ talosctl gen config YOUR_CLUSTER_NAME https://10.10.2.20:6443 \
   --with-secrets 00-talos/secrets.yaml \
   --config-patch-control-plane @00-talos/controlplane-network.patch.yaml \
   --config-patch-control-plane @00-talos/controlplane-scheduling.patch.yaml \
+  --config-patch-control-plane @00-talos/controlplane-longhorn-volume.patch.yaml \
+  --config-patch-control-plane @00-talos/controlplane-longhorn-kubelet.patch.yaml \
   --output 00-talos
 ```
 
@@ -108,6 +117,10 @@ kubectl wait --for=condition=Established crd/sealedsecrets.bitnami.com --timeout
 
 Example
 `kubeseal --scope namespace-wide -f <file> -w <output> --controller-name sealed-secrets-controller --controller-namespace sealed-secrets`
+
+## Notes
+
+- Current nodes are held on Proxmox VM and will need to be moved to nvme/ssd if deployed on baremetal
 
 ## TODO
 
