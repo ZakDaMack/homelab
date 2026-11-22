@@ -12,7 +12,6 @@ spec:
     solvers:
       - dns01:
           cloudflare:
-            email: z.dowsett@outlook.com
-            apiKeySecretRef:
-              name: cloudflare-api-key-secret
-              key: api-key
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: api-token

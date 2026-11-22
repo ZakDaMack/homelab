@@ -22,7 +22,7 @@ blah blah blah
 ### Prereqs
 
 - Talosctl
-- Kubectl
+- kubectl
 - Helm
 - Kustomize
 - ArgoCD
@@ -121,6 +121,8 @@ Example
 ## Notes
 
 - Current nodes are held on Proxmox VM and will need to be moved to nvme/ssd if deployed on baremetal
+- To sign in to ArgoCD before SSO is configured, use the local `admin` account. Retrieve the initial password with `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 --decode`.
+- OpenBao needs to be initialised once per new data volume. Done via UI. Set **Key shares** to **5** and **Key threshold** to **3**, then initialise.
 
 ## TODO
 
@@ -128,3 +130,4 @@ Example
 - Documentation
 - Simplify bootstrapping (scripting?)
 - Talos confs (add nvmes)
+- OpenBao backups
