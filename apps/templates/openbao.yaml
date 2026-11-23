@@ -22,10 +22,19 @@ spec:
     - repoURL: https://github.com/ZakDaMack/homelab
       targetRevision: HEAD
       ref: values
-      
+
+  ignoreDifferences:
+    # The injector rotates the webhook's CA bundle, showing OutOfSync
+    - group: admissionregistration.k8s.io
+      kind: MutatingWebhookConfiguration
+      name: openbao-agent-injector-cfg
+      jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
+
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
     automated:
       prune: true
       selfHeal: true
