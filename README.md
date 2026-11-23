@@ -126,7 +126,7 @@ Example
 
 ## TODO
 
-- Apps (n8n/windmill, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, CloudNativePG)
+- Apps (n8n, vaultwarden, fuelfinder (multi-deployment svc), mediaserver, CloudNativePG)
 - Documentation
 - Simplify bootstrapping (scripting?)
 - Talos confs (add nvmes)

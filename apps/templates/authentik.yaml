@@ -23,6 +23,8 @@ spec:
       targetRevision: HEAD
       ref: values
       path: authentik
+      directory:
+        include: '{authentik-externalsecret.yaml,argocd-oidc-externalsecret.yaml,argocd-oidc-blueprint.yaml}'
       
   syncPolicy:
     syncOptions:

@@ -21,6 +21,18 @@ server:
     enabled: true
     hosts:
       - authentik.k8s.zakhaven.uk
+
+blueprints:
+  configMaps:
+    - authentik-argocd-blueprint
+
+worker:
+  env:
+    - name: ARGOCD_OIDC_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: argocd-oidc-openbao
+          key: client-secret
       
 postgresql:
   enabled: true

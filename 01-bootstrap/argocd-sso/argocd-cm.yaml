@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/part-of: argocd
+data:
+  url: https://argocd.k8s.zakhaven.uk
+  oidc.config: |
+    name: Authentik
+    issuer: https://authentik.k8s.zakhaven.uk/application/o/argo-cd/
+    clientID: 27bQSSxaEfZUEserrVRZXXc4FzEFHUBeFiI4pXmc
+    clientSecret: $argocd-oidc-openbao:client-secret
+    requestedScopes:
+      - openid
+      - profile
+      - email
