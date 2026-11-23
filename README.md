@@ -131,3 +131,4 @@ Example
 - Simplify bootstrapping (scripting?)
 - Talos confs (add nvmes)
 - OpenBao backups
+- n8n integration with OIDC *https://github.com/cweagans/n8n-oidc*
