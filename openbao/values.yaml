@@ -5,13 +5,14 @@ global:
     prometheusOperator: true
 
 injector:
+  affinity: ""
   metrics:
     enabled: true
   logLevel: "info"
   logFormat: "standard"
 
 csi:
-  enabled: true
+  enabled: false
 
 ui:
   enabled: true
