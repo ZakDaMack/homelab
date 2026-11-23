@@ -38,3 +38,4 @@ postgresql:
   enabled: true
   auth:
     existingSecret: authentik-openbao
+    enablePostgresUser: false
